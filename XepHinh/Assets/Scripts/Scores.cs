@@ -25,7 +25,7 @@ public class Scores : MonoBehaviour
     {
         currentScores_ = 0;
         newBestScore_ = false;
-        squareTextuaData.SetStarcolor();
+        //squareTextuaData.SetStarcolor();
         UpdateScoreText();
     }
 
@@ -69,17 +69,17 @@ public class Scores : MonoBehaviour
             newBestScore_ = true;
             bestscore_.score = currentScores_;
         }
-        UpdateSquareColor();
+       // UpdateSquareColor();
         GameEvent.UpdateBestScoreBar(currentScores_,bestscore_.score);
         UpdateScoreText();
     }
-    private void UpdateSquareColor()
-    {
-        if(currentScores_ >= squareTextuaData.tresholdVal)
-        {
-            squareTextuaData.UpdateColors(currentScores_);
-        }
-    }
+    //private void UpdateSquareColor()
+    //{
+    //   // if(currentScores_ >= squareTextuaData.tresholdVal)
+    //    {
+    //        squareTextuaData.UpdateColors(currentScores_);
+    //    }
+    //}
 
     private void UpdateScoreText()
     {
