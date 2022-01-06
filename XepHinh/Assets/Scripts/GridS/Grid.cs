@@ -12,28 +12,37 @@ public class Grid : MonoBehaviour
     public Vector2 startPosition = new Vector2(0.0f, 0.0f);
     public float squareScale = 0.5f;
     public float everySqualeOffSet = 0.0f;
+    public SquareTextuaData squareTextuaData;
 
     private LineIndicator _lineIndicator;
     private Vector2 _offSet = new Vector2(0.0f, 0.0f);
     private List<GameObject> _gridSquares = new List<GameObject>();
 
-
+    private Config.SquareColor currentActiveSquareColor = Config.SquareColor.NotSet;
 
     private void OnEnable()
     {
         GameEvent.CheckIfShapeCanBePlaced += CheckIfShapeCanBePlaced;
+        GameEvent.UpdateSquareColor += OnUpdateSquareColor;
     }
 
     private void OnDisable()
     {
         GameEvent.CheckIfShapeCanBePlaced -= CheckIfShapeCanBePlaced;
+        GameEvent.UpdateSquareColor -= OnUpdateSquareColor;
+       
+    }
 
+    private void OnUpdateSquareColor(Config.SquareColor color)
+    {
+        currentActiveSquareColor = color;
     }
 
     void Start()
     {
         _lineIndicator = GetComponent<LineIndicator>();
-        CreatGrid(); 
+        CreatGrid();
+        currentActiveSquareColor = squareTextuaData.activeSquareTextures[0].squareColor;
     }
 
     private void CreatGrid()
@@ -140,7 +149,7 @@ public class Grid : MonoBehaviour
         {
                foreach(var squareIndex in squareIndexs)
                {
-                _gridSquares[squareIndex].GetComponent<GridSquare>().PlaceShapeOnboard(); //dat hinh vuong tren bang
+                _gridSquares[squareIndex].GetComponent<GridSquare>().PlaceShapeOnboard(currentActiveSquareColor); //dat hinh vuong tren bang
                }
 
             var shapeLeft = 0;

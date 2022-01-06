@@ -65,20 +65,21 @@ public class Scores : MonoBehaviour
     {
         currentScores_ += socres;
         if(currentScores_ > bestscore_.score)
-        {
+        {   
             newBestScore_ = true;
             bestscore_.score = currentScores_;
             SaveBestScores(true);
-        }
+        }   
         UpdateSquareColor();
         GameEvent.UpdateBestScoreBar(currentScores_,bestscore_.score);
         UpdateScoreText();
     }
     private void UpdateSquareColor()
     {
-        if (currentScores_ >= squareTextuaData.tresholdVal)
+        if (GameEvent.UpdateSquareColor != null && currentScores_ >= squareTextuaData.tresholdVal) 
         {
             squareTextuaData.UpdateColors(currentScores_);
+            GameEvent.UpdateSquareColor(squareTextuaData.currentColor); 
         }
     }
 
