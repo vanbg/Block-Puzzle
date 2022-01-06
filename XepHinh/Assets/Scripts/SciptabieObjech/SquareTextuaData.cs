@@ -43,7 +43,7 @@ public class SquareTextuaData : ScriptableObject
 
         if (currentColorIndex == activeSquareTextures.Count - 1)
         {
-            _nextColor = activeSquareTextures[0].squareColor;
+            _nextColor = activeSquareTextures[0].squareColor;//quay lai mau dau tien
         }
         else
         {
@@ -53,7 +53,7 @@ public class SquareTextuaData : ScriptableObject
         tresholdVal = StartTresholdVal + current_score;
     }
 
-    public void SetStarcolor()// mau bat dau dat
+    public void SetStarcolor()// mau bat dau da dat
     {
         tresholdVal = StartTresholdVal;
         currentColor = activeSquareTextures[0].squareColor;
