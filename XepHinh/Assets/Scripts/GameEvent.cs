@@ -17,4 +17,8 @@ public class GameEvent : MonoBehaviour
 
     public static Action<Config.SquareColor> UpdateSquareColor;
 
+    public static Action ShowCongratulationWritings; // hanh dong hien thi cac bai viet
+
+    public static Action<Config.SquareColor> ShowBonusScreen;
+
 }

@@ -89,6 +89,7 @@ GameObject:
   - component: {fileID: 2152482259752453330}
   - component: {fileID: 831638635651047953}
   - component: {fileID: 4652389821505855973}
+  - component: {fileID: 9094419250364295019}
   m_Layer: 0
   m_Name: Square Image
   m_TagString: Untagged
@@ -214,3 +215,17 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!114 &9094419250364295019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2152482259752453334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8fc9cfa650d9404cbf044c2983ce3eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  squareTextuaData: {fileID: 11400000, guid: fd0ccfcea496fe24388bbb24f406caba, type: 2}
+  updateImageOnRehedTreshold: 1
