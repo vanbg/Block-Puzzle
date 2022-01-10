@@ -9,10 +9,6 @@ public class Shape : MonoBehaviour,IPointerClickHandler,IPointerUpHandler,IBegin
     public GameObject anhHinhVuong;
     public Vector3 shapeSelectedScale;
     public Vector2 offset = new Vector2(0f, 700f);
-
-
-    public AudioSource audioSource;
-    public AudioClip click;
     
 
 
@@ -213,8 +209,7 @@ public class Shape : MonoBehaviour,IPointerClickHandler,IPointerUpHandler,IBegin
     public void OnPointerClick(PointerEventData eventData)//khi nhap chuot
     {
         _transform.Rotate(0, 0, 90);
-
-        audioSource.PlayOneShot(click);
+        ManageShould.instance.PlaySound(ManageShould.instance.click, 1f);
     }
     public void OnPointerUp(PointerEventData eventData)
     {

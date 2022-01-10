@@ -73,19 +73,23 @@ public class Scores : MonoBehaviour
         UpdateSquareColor();
         GameEvent.UpdateBestScoreBar(currentScores_,bestscore_.score);
         UpdateScoreText();
+       
     }
     private void UpdateSquareColor()
     {
         if (GameEvent.UpdateSquareColor != null && currentScores_ >= squareTextuaData.tresholdVal) 
         {
             squareTextuaData.UpdateColors(currentScores_);
-            GameEvent.UpdateSquareColor(squareTextuaData.currentColor); 
+            GameEvent.UpdateSquareColor(squareTextuaData.currentColor);
+            ManageShould.instance.PlaySound(ManageShould.instance.Point, 1f);
+
         }
     }
 
     private void UpdateScoreText()
     {
         socreText.text = currentScores_.ToString();
+       
     }
 
 }

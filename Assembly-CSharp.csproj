@@ -73,6 +73,7 @@
     <Compile Include="Assets\Scripts\GameEvent.cs" />
     <Compile Include="Assets\Scripts\Config.cs" />
     <Compile Include="Assets\Scripts\MainMeunControl.cs" />
+    <Compile Include="Assets\Scripts\ManageShould.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

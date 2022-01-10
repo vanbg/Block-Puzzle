@@ -232,6 +232,8 @@ public class Grid : MonoBehaviour
         {
             // todo: play bonus animation
             GameEvent.ShowCongratulationWritings();
+            ManageShould.instance.PlaySound(ManageShould.instance.Congratulation, 1f);
+
         }
 
         //tod : add scores
