@@ -57,13 +57,16 @@
     <Compile Include="Assets\Scripts\WritingsShaper.cs" />
     <Compile Include="Assets\Scripts\Shape\ShapeSquare.cs" />
     <Compile Include="Assets\Scripts\SciptabieObjech\SquareTextuaData.cs" />
+    <Compile Include="Assets\Scripts\ManageShould.cs" />
     <Compile Include="Assets\Scripts\ActiveSquareImage.cs" />
     <Compile Include="Assets\Scripts\GridS\GridSquare.cs" />
+    <Compile Include="Assets\Scripts\SceenScripts\Loading.cs" />
     <Compile Include="Assets\Scripts\Shape\ShapeStronge.cs" />
     <Compile Include="Assets\Scripts\BonusManage.cs" />
     <Compile Include="Assets\Scripts\Shape\Shape.cs" />
     <Compile Include="Assets\Scripts\Scores.cs" />
     <Compile Include="Assets\Scripts\GameOverPupop.cs" />
+    <Compile Include="Assets\Scripts\SceenScripts\SceenLoading.cs" />
     <Compile Include="Assets\Scripts\Bonus.cs" />
     <Compile Include="Assets\Scripts\Utility\BinaryDataStream.cs" />
     <Compile Include="Assets\Scripts\GridS\Grid.cs" />
@@ -73,7 +76,6 @@
     <Compile Include="Assets\Scripts\GameEvent.cs" />
     <Compile Include="Assets\Scripts\Config.cs" />
     <Compile Include="Assets\Scripts\MainMeunControl.cs" />
-    <Compile Include="Assets\Scripts\ManageShould.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

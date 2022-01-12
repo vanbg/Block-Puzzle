@@ -263,12 +263,14 @@ public class Grid : MonoBehaviour
             return 0;
         }
         //hien thi phan thuong khong bao h choi cho mau hien tai
-        if(colorPlayBonusFor==currentActiveSquareColor)
-        {
-            return 0;
-        }
+        //if(colorPlayBonusFor==currentActiveSquareColor)
+        //{
+        //    return 0;
+        //    Debug.Log("ko them diem mau hien tai");
+        //}
         
         GameEvent.ShowBonusScreen(colorPlayBonusFor);
+        Debug.Log("thuong");
         return 50;
 
         
@@ -343,6 +345,7 @@ public class Grid : MonoBehaviour
             //Game Over
             GameEvent.GameOver(false);
             //Debug.Log("Game Over");
+            ManageShould.instance.PlaySound(ManageShould.instance.GameOver, 1f);
         }
     }
 

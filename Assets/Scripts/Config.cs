@@ -10,8 +10,6 @@ public class Config : MonoBehaviour
         Red,
         Blue,
         Orange,
-    
-        
         Purple
 
     };

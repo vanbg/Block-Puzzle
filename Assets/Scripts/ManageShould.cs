@@ -8,12 +8,18 @@ public class ManageShould : MonoBehaviour
     public static ManageShould instance;
     public GameObject prefab;
 
+    public AudioClip soundtrack;
+    private AudioSource soundtrackSource;
     public AudioClip click;
     private AudioSource clickSource;
     public AudioClip Point;
     private AudioSource PointSource;
     public AudioClip Congratulation;
     private AudioSource CongratulationSource;
+    public AudioClip GameOver;
+    private AudioSource GameOverSource;
+    public AudioClip btn;
+    private AudioSource btnSource;
 
     private void Awake()
     {
@@ -22,10 +28,10 @@ public class ManageShould : MonoBehaviour
 
     public void PlaySound(AudioClip clip,float volume,bool isloopback)
     {
-            //if(clip == this.click)
-            //{
-            //    Play(clip, ref clickSource, volume, isloopback);
-            //}
+            if(clip == this.soundtrack)
+            {
+                Play(clip, ref soundtrackSource, volume, isloopback);
+            }
     }
 
     public void PlaySound(AudioClip clip, float volume)
@@ -45,11 +51,26 @@ public class ManageShould : MonoBehaviour
             Play(clip, ref CongratulationSource, volume);
             return;
         }
+        if (clip == this.GameOver)
+        {
+            Play(clip, ref GameOverSource, volume);
+            return;
+        }
+        if (clip == this.btn)
+        {
+            Play(clip, ref btnSource, volume);
+            return;
+        }
     }
 
     public void StopSound(AudioClip clip)
     {
-        if(this == this.click)
+        if (this == this.soundtrack)
+        {
+            clickSource?.Stop();
+            return;
+        }
+        if (this == this.click)
         {
             clickSource?.Stop();
             return;
@@ -60,6 +81,16 @@ public class ManageShould : MonoBehaviour
             return;
         }
         if (this == this.Congratulation)
+        {
+            CongratulationSource?.Stop();
+            return;
+        }
+        if (this == this.GameOver)
+        {
+            CongratulationSource?.Stop();
+            return;
+        }
+        if (this == this.btn)
         {
             CongratulationSource?.Stop();
             return;
@@ -83,14 +114,4 @@ public class ManageShould : MonoBehaviour
         Destroy(audioSource.gameObject, audioSource.clip.length);
     }
 
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

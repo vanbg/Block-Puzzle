@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
 
 public class BonusManage : MonoBehaviour
@@ -11,12 +12,9 @@ public class BonusManage : MonoBehaviour
         GameEvent.ShowBonusScreen += ShowBonusScreen;
     }
 
-  
-
-    private void OnDisaBle()
+    private void OnDisable()
     {
         GameEvent.ShowBonusScreen -= ShowBonusScreen;
-
     }
 
     private void ShowBonusScreen(Config.SquareColor color)
@@ -26,7 +24,7 @@ public class BonusManage : MonoBehaviour
         foreach (var bonus in bonusList)
         {
             var bonusComp = bonus.GetComponent<Bonus>();
-            if(bonusComp.color ==color)
+            if(bonusComp.color == color)
             {
                 obj = bonus;
                 bonus.SetActive(true);
